@@ -1,4 +1,0 @@
-C:/Projects/NetController/build/CMakeFiles/ALL_BUILD.dir
-C:/Projects/NetController/build/CMakeFiles/ZERO_CHECK.dir
-C:/Projects/NetController/build/net_controller/CMakeFiles/net_controller.dir
-C:/Projects/NetController/build/net_controller/CMakeFiles/ALL_BUILD.dir
