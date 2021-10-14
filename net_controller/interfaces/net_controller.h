@@ -18,7 +18,7 @@ struct NetController
 {
     virtual ~NetController() = 0;
 
-    virtual NetErrorCode SendMessage(
+    virtual NetErrorCode Send(
         const std::string& topic,
         const std::string& replyTo,
         const std::string& message,

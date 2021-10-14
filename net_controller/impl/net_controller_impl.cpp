@@ -1,5 +1,9 @@
 #include <impl/net_controller_impl.h>
 
+#ifdef _WIN32
+#   include <WinSock2.h>
+#endif
+
 #include <stdexcept>
 
 namespace net_controller
@@ -11,7 +15,7 @@ NetControllerImpl::NetControllerImpl(const NetType netType)
 
 }
 
-NetErrorCode NetControllerImpl::SendMessage(
+NetErrorCode NetControllerImpl::Send(
     const std::string& topic,
     const std::string& replyTo,
     const std::string& message,

@@ -11,7 +11,7 @@ class NetControllerImpl : public NetController
 public:
     NetControllerImpl(const NetType netType);
 
-    virtual NetErrorCode SendMessage(
+    virtual NetErrorCode Send(
         const std::string& topic,
         const std::string& replyTo,
         const std::string& message,
