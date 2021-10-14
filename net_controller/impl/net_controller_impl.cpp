@@ -23,7 +23,7 @@ NetErrorCode NetControllerImpl::SendMessage(
         return nats(topic, replyTo, message, onMessageCb);
 
     default:
-        throw std::runtime_error("Unknon net type");
+        throw std::runtime_error("Unknown net type");
     }
 }
 
