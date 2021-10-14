@@ -1,6 +1,7 @@
 #pragma once
 
 #include <interfaces/net_controller.h>
+#include <model/net_type.h>
 
 namespace net_controller
 {
@@ -8,11 +9,24 @@ namespace net_controller
 class NetControllerImpl : public NetController
 {
 public:
-    virtual NetErrorCode Subscribe(const std::string& topic, const OnSubscribeCb& onSubscribe) override;
+    NetControllerImpl(const NetType netType);
 
-    virtual NetErrorCode Unsubscribe(const std::string& topic) override;
+    virtual NetErrorCode SendMessage(
+        const std::string& topic,
+        const std::string& replyTo,
+        const std::string& message,
+        const OnMessageCb& onMessageCb) override;
 
-    virtual NetErrorCode Publish(const std::string& topic, const std::string& replyTo, const std::string& message) override;
+private:
+    NetErrorCode nats(
+        const std::string& topic,
+        const std::string& replyTo,
+        const std::string& message,
+        const OnMessageCb& onMessageCb
+    );
+
+private:
+    NetType netType_;
 };
 
 } // namespace net_controller
